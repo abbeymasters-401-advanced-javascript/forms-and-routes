@@ -2,13 +2,16 @@
 const HTMLPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// eslint-disable-next-line no-undef
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: './bundle.[hash].js'
+    filename: './bundle.[hash].js',
+    publicPath: '/'
   },
   devServer: {
-    port: 7890
+    port: 7890,
+    historyApiFallback: true
   },
   plugins: [
     new HTMLPlugin({ template: './src/index.html' }),
