@@ -9,15 +9,17 @@ export default class List extends Component {
   }
 
   componentDidMount() {
-    const URL = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${this.props.match.params.search}`;
+    const URL = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${this.props.match.params.id}`;
     getCharacters(URL)
-      .then(data => this.setState({ data: data[0].photoUrl }));
+      .then(characters => { 
+        this.setState({ characters });
+      });
   }
 
   render() {
     const allChars = this.state.characters.map(character => {
       return (
-        <p key={character.photoUrl}>hello</p>
+        <p key={character._id}>{character.name}</p>
       );
     });
 
@@ -30,13 +32,13 @@ export default class List extends Component {
       </>
     );
   }
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  };
 }
 
-List.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      search: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
-};
 

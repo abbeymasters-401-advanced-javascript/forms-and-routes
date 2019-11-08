@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from '../containers/Home';
 import List from './List';
-import Detail from './Detail';
+// import Detail from './Detail';
 
 export default function App() {
   return (
@@ -13,8 +13,8 @@ export default function App() {
         <>
           <Header />
           <Switch>
-            <Route exact path='character/:characterName' component={Detail}></Route>
-            <Route path='list/:character' component={List}></Route>
+            {/* <Route exact path='/character/:id' component={Detail}></Route> */}
+            <Route path='/list/:id' component={List}></Route>
             <Route exact path='/' component={Home}></Route>
           </Switch>
           <Footer />
