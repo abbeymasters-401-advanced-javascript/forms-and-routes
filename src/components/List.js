@@ -11,7 +11,7 @@ export default class List extends Component {
   componentDidMount() {
     const URL = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${this.props.match.params.id}`;
     getCharacters(URL)
-      .then(characters => { 
+      .then(characters => {
         this.setState({ characters });
       });
   }
@@ -19,7 +19,12 @@ export default class List extends Component {
   render() {
     const allChars = this.state.characters.map(character => {
       return (
-        <p key={character._id}>{character.name}</p>
+        <>
+          <li key={character._id}>
+            <img src={character.photoUrl} alt={character.name} />
+            <p>{character.name}</p>
+          </li>
+        </>
       );
     });
 
