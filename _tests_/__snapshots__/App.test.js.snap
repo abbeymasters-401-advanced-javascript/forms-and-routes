@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component renders App 1`] = `
+<Fragment>
+  <BrowserRouter>
+    <Header />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/character/:id"
+      />
+      <Route
+        component={[Function]}
+        path="/list/:id"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+    </Switch>
+    <Footer />
+  </BrowserRouter>
+</Fragment>
+`;
