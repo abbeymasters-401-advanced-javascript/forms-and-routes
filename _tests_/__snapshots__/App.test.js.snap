@@ -8,11 +8,11 @@ exports[`App Component renders App 1`] = `
       <Route
         component={[Function]}
         exact={true}
-        path="character/:characterName"
+        path="/character/:id"
       />
       <Route
         component={[Function]}
-        path="list/:character"
+        path="/list/:id"
       />
       <Route
         component={[Function]}
