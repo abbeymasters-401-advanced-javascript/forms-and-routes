@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import getCharacters from '../services/airbender-api';
+import { Link } from 'react-router-dom';
 
 export default class List extends Component {
 
@@ -20,10 +21,12 @@ export default class List extends Component {
     const allChars = this.state.characters.map(character => {
       return (
         <>
-          <li key={character._id}>
-            <img src={character.photoUrl} alt={character.name} />
-            <p>{character.name}</p>
-          </li>
+          <Link to={`/character/${character.name}`}>
+            <li key={character._id}>
+              <img src={character.photoUrl} alt={character.name} />
+              <p>{character.name}</p>
+            </li>
+          </Link>
         </>
       );
     });
